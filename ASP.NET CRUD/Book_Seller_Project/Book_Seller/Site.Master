@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Book_Seller.Site" %>
+<%@ Register Src="~/WebUserControlMaster.ascx" TagPrefix="uc1" TagName="WebUserControlMaster" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title><%: Page.Title %></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.bundle.js"></script>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+        }
+
+        .main {
+            min-height: calc(100vh - 170px);
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="headContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <uc1:WebUserControlMaster runat="server" id="NavUserControl" />
+        
+        <div class="container-fluid main">
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                <h1 class="display-1">ASP.NET WebForms</h1>
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="container-fluid">
+            <p>&copy;Copiright - <%: DateTime.Now.Year %></p>
+            <p>Desigin by Md.Maruf Billah</p>
+            <p>ID:1268006</p>
+        </footer>
+        <asp:ContentPlaceHolder ID="footer" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
